@@ -22,20 +22,20 @@ const speak=()=>{
  window.speechSynthesis.speak(newText);
  props.showAlert("Converted to Speak","success");
 }
-const pause=()=>{
-  // console.log("Uppercase was clicked"+text);
-  let newText=new SpeechSynthesisUtterance();
-  newText.text=text;
-window.speechSynthesis.pause(newText);
-props.showAlert("Converted to Pause","success");
-}
-const resume=()=>{
-  // console.log("Uppercase was clicked"+text);
-  let newText=new SpeechSynthesisUtterance();
-  newText.text=text;
-window.speechSynthesis.resume(newText); 
-props.showAlert("Converted to resume","success");
-}
+// const pause=()=>{
+//   // console.log("Uppercase was clicked"+text);
+//   let newText=new SpeechSynthesisUtterance();
+//   newText.text=text;
+// window.speechSynthesis.pause(newText);
+// props.showAlert("Converted to Pause","success");
+// }
+// const resume=()=>{
+//   // console.log("Uppercase was clicked"+text);
+//   let newText=new SpeechSynthesisUtterance();
+//   newText.text=text;
+// window.speechSynthesis.resume(newText); 
+// props.showAlert("Converted to resume","success");
+// }
 const handleCopy=()=>{
   let text=document.getElementById("myBox");
   text.select();
@@ -54,6 +54,11 @@ const handleappend=()=>{
   let newText=text.split(/[ ]+/);
   setText(newText.join(""))
   props.showAlert("Text appended","success");
+}
+const cleartext=()=>{
+  let newText='';
+  setText(newText);
+  props.showAlert("Cleared text","success");
 }
 
 const handleOnChange=(event)=>{
@@ -78,24 +83,25 @@ const handleOnChange=(event)=>{
   <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor:props.mode==='dark'?'grey':'white',
   color:props.mode==='dark'?'white':'#042743'}}id="myBox" rows="8"></textarea>
 </div>
-<button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
-<button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to Lowercase</button>
-<button  className="btn btn-primary mx-2" onClick={speak}>Convert to Speak</button>
-<button  className="btn btn-primary mx-2" onClick={pause}>Convert to pause</button>
-<button  className="btn btn-primary mx-2" onClick={resume}>Convert to resume</button>
-<button  className="btn btn-primary mx-2" onClick={handleCopy}>Copy the text</button>
-<button  className="btn btn-primary mx-2" onClick={handleextraspace}>Handle extra space</button>
-<button  className="btn btn-primary mx-2 my-2" onClick={handleappend}>Handle append</button>
+<button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+<button className="btn btn-primary mx-2 my-1" onClick={handleLoClick}>Convert to Lowercase</button>
+<button  className="btn btn-primary mx-2 my-1" onClick={speak}>Convert to Speak</button>
+{/* <button  className="btn btn-primary mx-2" onClick={pause}>Convert to pause</button> */}
+{/* <button  className="btn btn-primary mx-2" onClick={resume}>Convert to resume</button> */}
+<button  className="btn btn-primary mx-2 my-1" onClick={handleCopy}>Copy the text</button>
+<button  className="btn btn-primary mx-2 my-1" onClick={handleextraspace}>Handle extra space</button>
+<button  className="btn btn-primary mx-2 my-1" onClick={handleappend}>Append texts</button> 
+<button  className="btn btn-primary mx-2 my-1" onClick={cleartext}>Clear text</button>
 
     </div>
     <div className="container my-3" style={{color:props.mode==='dark'?'white':'#042743'}}>
 <h2>Your text summary</h2>
 
 <p>
-{text.split(" ").length>1?text.split(" ").length-1:0}  <b>words</b>and  {text.length} <b>characters</b>
+{text.trim(" ").split(" ").filter((e)=>e!="").length} <b>words</b> and  {text.length} <b>characters</b>
 </p>
 
-<p>{0.008*text.split(" ").length} <b>Minutes read</b></p>
+<p>{(0.008*(text.trim(" ").split(" ").filter((e)=>e!="").length)).toFixed(3)} <b>Minutes read</b></p>
 <h2>Preview</h2>
 <p>{text.length>0?text:"Enter your text to preview here"}</p>
     </div>
