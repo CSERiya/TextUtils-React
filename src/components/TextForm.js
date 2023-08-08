@@ -103,7 +103,7 @@ const handleOnChange=(event)=>{
 
 <p>{(0.008*(text.trim(" ").split(" ").filter((e)=>e!="").length)).toFixed(3)} <b>Minutes read</b></p>
 <h2>Preview</h2>
-<p>{text.length>0?text:"Enter your text to preview here"}</p>
+<p>{text.length>0?text:"Enter your text to preview here"}</p> 
     </div>
   </>
 

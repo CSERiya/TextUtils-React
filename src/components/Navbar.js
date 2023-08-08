@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 export default function Navbar(props) {
   // const colorOptions=[{name:"Blue",backgroundColor:"blue"},{name:"Green",backgroundColor:"Green"},{name:"Yellow",backgroundColor:"Yellow"},
   // {name:"Purple",backgroundColor:"purple"},{name:"Grey",backgroundColor:"grey"}];
@@ -16,7 +16,7 @@ export default function Navbar(props) {
     
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
   <div className="container-fluid">
-    <a className="navbar-brand" href="#">{props.title}</a>
+    <Link className="navbar-brand" to="/">{props.title}</Link>
     {/* Color change buttons- */}
     {/* <div>
       {colorOptions.map((colorOption,index)=>(
@@ -32,10 +32,10 @@ export default function Navbar(props) {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
+          <Link className="nav-link active" aria-current="page" to="/">Home</Link>
         </li>
         <li className="nav-item">
-          {/* <Link className="nav-link" to="/about">{props.aboutText}</Link> */}
+          <Link className="nav-link" to="/Abt">{props.aboutText}</Link>
         </li>
         {/* <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -69,4 +69,4 @@ export default function Navbar(props) {
 }
 
 Navbar.propTypes={title:PropTypes.string.isRequired,aboutText:PropTypes.string}
-Navbar.defaultProps={title:'Set title here',aboutText:'About text here'} 
+Navbar.defaultProps={title:'Set title here',aboutText:'About'} 
