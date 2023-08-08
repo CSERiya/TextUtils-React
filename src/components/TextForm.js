@@ -80,7 +80,7 @@ const handleOnChange=(event)=>{
 <h1>{props.heading}</h1>
 <div className="mb-3">
   {/* <label htmlFor="myBox" className="form-label">Enter your text here..</label> */}
-  <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor:props.mode==='dark'?'grey':'white',
+  <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor:props.mode==='dark'?'#13466e':'white',
   color:props.mode==='dark'?'white':'#042743'}}id="myBox" rows="8"></textarea>
 </div>
 <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
@@ -98,10 +98,10 @@ const handleOnChange=(event)=>{
 <h2>Your text summary</h2>
 
 <p>
-{text.trim(" ").split(" ").filter((e)=>e!="").length} <b>words</b> and  {text.length} <b>characters</b>
+{text.trim(" ").split(" ").filter((e)=>e!=="").length} <b>words</b> and  {text.length} <b>characters</b>
 </p>
 
-<p>{(0.008*(text.trim(" ").split(" ").filter((e)=>e!="").length)).toFixed(3)} <b>Minutes read</b></p>
+<p>{(0.008*(text.trim(" ").split(" ").filter((e)=>e!=="").length)).toFixed(3)} <b>Minutes read</b></p>
 <h2>Preview</h2>
 <p>{text.length>0?text:"Enter your text to preview here"}</p> 
     </div>
