@@ -51,8 +51,7 @@ else{
   {/*<Routes>
     <Route exact path="/about" element={<About/>}></Route>
   // <Route exact path="/" element={*/}
-      <TextForm showAlert={showAlert}heading="Try TextUtils - Word Counter, Character Counter, Text to voice, 
-      Remove extra spaces, Copy text, Merge texts" mode={mode} />
+      <TextForm showAlert={showAlert}heading="TextUtils - Text modifier" mode={mode} />
        {/*</Route>
   </Routes>   */}
 {/* <Switch>
