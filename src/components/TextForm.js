@@ -85,15 +85,15 @@ const handleOnChange=(event)=>{
   <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor:props.mode==='dark'?'#13466e':'white',
   color:props.mode==='dark'?'white':'#042743'}}id="myBox" rows="8"></textarea>
 </div>
-<button disabled={text.length===0}className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
-<button disabled={text.length===0}className="btn btn-primary mx-2 my-1" onClick={handleLoClick}>Convert to Lowercase</button>
-<button  disabled={text.length===0}className="btn btn-primary mx-2 my-1" onClick={speak}>Convert to Speak</button>
+<button disabled={text.length===0}className="btn btn-dark mx-2 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+<button disabled={text.length===0}className="btn btn-dark mx-2 my-1" onClick={handleLoClick}>Convert to Lowercase</button>
+<button  disabled={text.length===0}className="btn btn-dark mx-2 my-1" onClick={speak}>Convert to Speak</button>
 {/* <button  className="btn btn-primary mx-2" onClick={pause}>Convert to pause</button> */}
 {/* <button  className="btn btn-primary mx-2" onClick={resume}>Convert to resume</button> */}
-<button  disabled={text.length===0}className="btn btn-primary mx-2 my-1" onClick={handleCopy}>Copy the text</button>
-<button  disabled={text.length===0}className="btn btn-primary mx-2 my-1" onClick={handleextraspace}>Handle extra space</button>
-<button  disabled={text.length===0}className="btn btn-primary mx-2 my-1" onClick={handleappend}>Append texts</button> 
-<button  disabled={text.length===0}className="btn btn-primary mx-2 my-1" onClick={cleartext}>Clear text</button>
+<button  disabled={text.length===0}className="btn btn-dark mx-2 my-1" onClick={handleCopy}>Copy the text</button>
+<button  disabled={text.length===0}className="btn btn-dark mx-2 my-1" onClick={handleextraspace}>Handle extra space</button>
+<button  disabled={text.trim(" ").split(" ").filter((e)=>e!=="").length<=1}className="btn btn-dark mx-2 my-1" onClick={handleappend}>Append texts</button> 
+<button  disabled={text.length===0}className="btn btn-dark mx-2 my-1" onClick={cleartext}>Clear text</button>
 
     </div>
     <div disabled={text.length===0}className="container my-3" style={{color:props.mode==='dark'?'white':'#042743'}}>

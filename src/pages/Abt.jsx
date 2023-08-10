@@ -20,11 +20,24 @@ setTimeout(()=>{
 setAlert(null);
 },1500)
   }
-  const toggleMode=()=>{
-if(mode==='light'){
-  setMode('dark');
-  document.body.style.backgroundColor='#042743';  
-showAlert("Dark mode has been enabled","success");
+  const removeBodyClasses=()=>{
+    document.body.classList.remove('bg-light');
+    document.body.classList.remove('bg-dark');
+    document.body.classList.remove('bg-warning');
+    document.body.classList.remove('bg-danger');
+    document.body.classList.remove('bg-info');
+    document.body.classList.remove('bg-success');
+    document.body.classList.remove('bg-primary');
+    document.body.classList.remove('bg-secondary');
+  }
+  const toggleMode=(cls)=>{
+    removeBodyClasses();
+    console.log(cls)
+    document.body.classList.add('bg-'+cls)
+// if(mode==='light'){
+//   setMode('dark');
+//   document.body.style.backgroundColor='#042743';  
+// showAlert("Dark mode has been enabled","success");
 // document.title='TextUtils - Dark Mode'
 // setInterval(()=>{
 //   document.title='TextUtils is an Amazing Mode'
@@ -32,14 +45,14 @@ showAlert("Dark mode has been enabled","success");
 // setInterval(()=>{
 //   document.title=' Install TextUtils Now'
 // },1500);
- }
-else{
+//  }
+// else{
   setMode('light');
   document.body.style.backgroundColor='white';
-  showAlert("Light mode has been enabled","success");
+  // showAlert("Light mode has been enabled","success");
 //  document.title='TextUtils - Light Mode'
 }
-  }
+  // }
  
   return (
 <>
