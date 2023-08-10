@@ -9,17 +9,17 @@ import Alert from '../components/Alert';
  
 function Abt() {
   const[mode, setMode]=useState('light');
-  const[alert, setAlert]=useState(null);
+  // const[alert, setAlert]=useState(null);
 
-  const showAlert=(message,type)=>{ 
-setAlert({
-msg:message,
-type:type 
-})
-setTimeout(()=>{
-setAlert(null);
-},1500)
-  }
+//   const showAlert=(message,type)=>{ 
+// setAlert({
+// msg:message,
+// type:type 
+// })
+// setTimeout(()=>{
+// setAlert(null);
+// },1500)
+//   }
   const removeBodyClasses=()=>{
     document.body.classList.remove('bg-light');
     document.body.classList.remove('bg-dark');
@@ -33,7 +33,7 @@ setAlert(null);
   const toggleMode=(cls)=>{
     removeBodyClasses();
     console.log(cls)
-    document.body.classList.add('bg-'+cls)
+    document.body.classList.add('bg-'+cls)    
 // if(mode==='light'){
 //   setMode('dark');
 //   document.body.style.backgroundColor='#042743';  
