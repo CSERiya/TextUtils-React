@@ -53,22 +53,22 @@ export default function Navbar(props) {
         </li> */}
       </ul>
       <div className="d-flex">
-      {/* <div className="bg-light rounded mx-2" onClick={()=>{props.toggleMode('light')}}style={{height:'25px', width:'25px',
-        borderRadius:'10px',cursor:'pointer'}}></div> */}
+      <div className="bg-light rounded mx-2" onClick={()=>{props.toggleMode('light')}}style={{height:'25px', width:'25px',border:'1px solid black',
+        borderRadius:'10px',cursor:'pointer'}}></div>
         <div className="bg-primary rounded mx-2" onClick={()=>{props.toggleMode('primary')}}style={{height:'25px', width:'25px',
-        borderRadius:'10px',cursor:'pointer'}}></div>
+        border:'1px solid black',borderRadius:'10px',cursor:'pointer'}}></div>
            <div className="bg-danger rounded mx-2" onClick={()=>{props.toggleMode('danger')}}style={{height:'25px', width:'25px',
-        borderRadius:'10px',cursor:'pointer'}}></div>
+        border:'1px solid black',borderRadius:'10px',cursor:'pointer'}}></div>
          <div className="bg-success rounded mx-2" onClick={()=>{props.toggleMode('success')}}style={{height:'25px', width:'25px',
-        borderRadius:'10px',cursor:'pointer'}}></div>
+        border:'1px solid black',borderRadius:'10px',cursor:'pointer'}}></div>
          <div className="bg-warning rounded mx-2" onClick={()=>{props.toggleMode('warning')}}style={{height:'25px', width:'25px',
-        borderRadius:'10px',cursor:'pointer'}}></div>
+        border:'1px solid black',borderRadius:'10px',cursor:'pointer'}}></div>
         <div className="bg-secondary rounded mx-2" onClick={()=>{props.toggleMode('secondary')}}style={{height:'25px', width:'25px',
-        borderRadius:'10px',cursor:'pointer'}}></div>
-        <div className="bg-info rounded mx-2" onClick={()=>{props.toggleMode('info')}}style={{height:'25px', width:'25px',
+       border:'1px solid black', borderRadius:'10px',cursor:'pointer'}}></div>
+        <div className="bg-info rounded mx-2" onClick={()=>{props.toggleMode('info')}}style={{height:'25px', width:'25px',border:'1px solid black',
         borderRadius:'10px',cursor:'pointer'}}></div>
           {/* <div className="bg-dark rounded mx-2 " solid whiite onClick={()=>{props.toggleMode('dark')}}style={{height:'25px', width:'25px',
-        borderRadius:'10px',cursor:'pointer',bordercolor:'white'}}></div>   */}
+       border:'1px solid white',  color:'white',borderRadius:'10px',cursor:'pointer'}}></div>      */}
       </div>
     
       <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
